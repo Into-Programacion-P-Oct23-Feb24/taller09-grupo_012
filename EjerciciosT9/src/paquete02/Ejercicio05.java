@@ -21,7 +21,7 @@ public class Ejercicio05 {
         Antes de analizar el presente ejercicio,
         usted debe revisar y entender lo desarrollado
         en el archivo Ayuda01.java del paquete2
-        */
+         */
         Scanner entrada = new Scanner(System.in);
         String[] estudiantes = {"Kimberly", "Hogan",
             "Teresa", "Luis", "Mark", "Jennifer",
@@ -30,11 +30,28 @@ public class Ejercicio05 {
         char inicialLetra;
         boolean bandera = true;
         while (bandera) {
-            System.out.println("Ingrese una letra");
-            inicial = entrada.nextLine();
-            
+            while (bandera) {
+                System.out.println("Ingrese una letra");
+                inicial = entrada.nextLine().toUpperCase();
+                // hicimos un ciclo repetitivo, que mientras no se ingrese 
+                // ninguna de las letras presentadas en el switch case
+                // siga preguntando por una letra, ya que si una letra coincide 
+                // con el case, bandera pasa a ser false y rompe el ciclo
+                switch (inicial) {
+                    case ("K"):
+                    case ("H"):
+                    case ("T"):
+                    case ("L"):
+                    case ("M"):
+                    case ("J"):
+                    case ("A"):
+                        bandera = false;
+                        break;
+                    default:
+                }
+            }
+
         }
 
     }
-
 }
